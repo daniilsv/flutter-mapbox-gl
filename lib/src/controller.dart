@@ -128,7 +128,7 @@ class MapboxMapController extends ChangeNotifier {
         final String symbolId = call.arguments['symbol'];
         final Symbol symbol = _symbols[symbolId];
         if (symbol != null) {
-          if (symbol.options.onTap != null) symbol.options.onTap();
+          if (symbol.options.onTap != null) symbol.options.onTap(symbol);
           onSymbolTapped(symbol);
         }
         break;
@@ -136,7 +136,7 @@ class MapboxMapController extends ChangeNotifier {
         final String lineId = call.arguments['line'];
         final Line line = _lines[lineId];
         if (line != null) {
-          if (line.options.onTap != null) line.options.onTap();
+          if (line.options.onTap != null) line.options.onTap(line);
           onLineTapped(line);
         }
         break;
@@ -144,7 +144,7 @@ class MapboxMapController extends ChangeNotifier {
         final String circleId = call.arguments['circle'];
         final Circle circle = _circles[circleId];
         if (circle != null) {
-          if (circle.options.onTap != null) circle.options.onTap();
+          if (circle.options.onTap != null) circle.options.onTap(circle);
           onCircleTapped(circle);
         }
         break;

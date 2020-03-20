@@ -6,6 +6,8 @@
 
 part of mapbox_gl;
 
+typedef void OnSymbolTap(Symbol symbol);
+
 class Symbol {
   @visibleForTesting
   Symbol(this._id, this._options, [this._data]);
@@ -21,6 +23,7 @@ class Symbol {
 
   final Map _data;
   Map get data => _data;
+
   /// The symbol configuration options most recently applied programmatically
   /// via the map controller.
   ///
@@ -103,11 +106,9 @@ class SymbolOptions {
   final LatLng geometry;
   final int zIndex;
   final bool draggable;
-  final Function onTap;
+  final OnSymbolTap onTap;
 
-  static const SymbolOptions defaultOptions = SymbolOptions(
-
-  );
+  static const SymbolOptions defaultOptions = SymbolOptions();
 
   SymbolOptions copyWith(SymbolOptions changes) {
     if (changes == null) {
@@ -183,5 +184,4 @@ class SymbolOptions {
     addIfPresent('draggable', draggable);
     return json;
   }
-
 }

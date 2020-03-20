@@ -6,6 +6,7 @@
 
 part of mapbox_gl;
 
+typedef void OnCircleTap(Circle circle);
 class Circle {
   @visibleForTesting
   Circle(this._id, this._options, [this._data]);
@@ -60,7 +61,7 @@ class CircleOptions {
   final double circleStrokeOpacity;
   final LatLng geometry;
   final bool draggable;
-  final Function onTap;
+  final OnCircleTap onTap;
 
   static const CircleOptions defaultOptions = CircleOptions();
 

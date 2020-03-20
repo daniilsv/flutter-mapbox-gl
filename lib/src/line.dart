@@ -6,6 +6,7 @@
 
 part of mapbox_gl;
 
+typedef void OnLineTap(Line line);
 class Line {
   @visibleForTesting
   Line(this._id, this._options, [this._data]);
@@ -64,7 +65,7 @@ class LineOptions {
   final String linePattern;
   final List<LatLng> geometry;
   final bool draggable;
-  final Function onTap;
+  final OnLineTap onTap;
 
   static const LineOptions defaultOptions = LineOptions();
 
