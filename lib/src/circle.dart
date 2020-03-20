@@ -48,6 +48,7 @@ class CircleOptions {
     this.circleStrokeOpacity,
     this.geometry,
     this.draggable,
+    this.onTap,
   });
 
   final double circleRadius;
@@ -59,6 +60,7 @@ class CircleOptions {
   final double circleStrokeOpacity;
   final LatLng geometry;
   final bool draggable;
+  final Function onTap;
 
   static const CircleOptions defaultOptions = CircleOptions();
 
@@ -76,6 +78,7 @@ class CircleOptions {
       circleStrokeOpacity: changes.circleStrokeOpacity ?? circleStrokeOpacity,
       geometry: changes.geometry ?? geometry,
       draggable: changes.draggable ?? draggable,
+      onTap: changes.onTap ?? onTap,
     );
   }
 

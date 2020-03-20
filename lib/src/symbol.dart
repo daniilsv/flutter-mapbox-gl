@@ -73,6 +73,7 @@ class SymbolOptions {
     this.geometry,
     this.zIndex,
     this.draggable,
+    this.onTap,
   });
 
   final double iconSize;
@@ -102,6 +103,7 @@ class SymbolOptions {
   final LatLng geometry;
   final int zIndex;
   final bool draggable;
+  final Function onTap;
 
   static const SymbolOptions defaultOptions = SymbolOptions(
 
@@ -139,6 +141,7 @@ class SymbolOptions {
       geometry: changes.geometry ?? geometry,
       zIndex: changes.zIndex ?? zIndex,
       draggable: changes.draggable ?? draggable,
+      onTap: changes.onTap ?? onTap,
     );
   }
 
